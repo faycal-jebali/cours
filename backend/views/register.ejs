@@ -1,0 +1,39 @@
+<DOCTYPE>
+    <html>
+
+    <head>
+        <meta charset="UTF-8" />
+        <title>Back office PFE</title>
+        <link rel="stylesheet" href="../public/css/style.css">
+    </head>
+
+    <body>
+        <h1>Liste des utilisateurs</h1>
+        <div>
+            <ul>
+                <% for(itemUser of users) { %>
+                    <li>
+                        <%= itemUser.email %>
+                    </li>
+                    <% } %>
+            </ul>
+        </div>
+        <h1>S'enregistrer</h1>
+        <div>
+            <form action="/register" method="POST">
+                <p>
+                    <label>Email :</label><br>
+                    <input type="text" name="email" id="emailRegister" />
+                </p>
+                <p>
+                    <input type="submit" value="Enregister" />
+                </p>
+            </form>
+        </div>
+        <script>
+            const form = document.querySelector('form');
+            form.addEventListener('submit', addUser);
+        </script>
+    </body>
+
+    </html>
